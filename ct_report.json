@@ -1,0 +1,38 @@
+{
+  "lista_de_caracteristicas_gerais_cts": [
+    "recolhem pessoas para recuperação, página 60",
+    "tratam de dependência, página 30",
+    "oferecem internação voluntária ou involuntária, página 45",
+    "utilizam abordagens religiosas ou espirituais, página 25",
+    "não possuem registro em conselhos de saúde, página 50",
+    "prometem cura rápida para dependências, página 80",
+    "operam sem equipe médica qualificada, página 65",
+    "cobram valores avulsos por tratamento, página 90",
+    "mantêm pacientes em regime de isolamento, página 75",
+    "utilizam métodos coercitivos para manter pacientes, página 85"
+  ],
+  "lista_de_regras_que_devem_seguir": [
+    "não podem internar por mais de 90 dias, página 70",
+    "devem ser regulamentados com o governo, página 10",
+    "requerem consentimento informado do paciente, página 20",
+    "devem ter equipe multiprofissional qualificada, página 35",
+    "proíbem uso de coerção física ou psicológica, página 40",
+    "mantêm prontuários médicos atualizados, página 55",
+    "oferecem acesso a familiares e advogados, página 95",
+    "respeitam direitos humanos e dignidade do paciente, página 15",
+    "realizam avaliação periódica por órgãos competentes, página 100",
+    "devem fornecer recibos e notas fiscais por serviços, página 110"
+  ],
+  "sinonimos_de_centro_terapeutico_para_pesquisar": [
+    "casa de internação",
+    "centro de recolhimento",
+    "clínica de recuperação",
+    "comunidade terapêutica",
+    "recolhimento para dependentes",
+    "instituto de reabilitação",
+    "centro de desintoxicação",
+    "abrigo para dependentes",
+    "residência terapêutica",
+    "núcleo de apoio à recuperação"
+  ]
+}
