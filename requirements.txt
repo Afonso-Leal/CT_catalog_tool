@@ -1,0 +1,10 @@
+# Furia - CT Catalog Tool
+
+requests>=2.31.0
+pymupdf>=1.23.0
+scrapling[ai]>=1.0.0
+lxml>=5.0.0
+pyyaml>=6.0.0
+rich>=13.0.0
+prompt-toolkit>=3.0.0
+mcp>=1.0.0

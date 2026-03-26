@@ -75,6 +75,55 @@ def run_analysis():
     return results
 
 
+def run_analysis_bulk(n: int, contents_path: str = "analyzer/output/ct_contents.json") -> list[AnalysisResult]:
+    """
+    Analisa em lote as primeiras `n` entradas (únicas) de `ct_contents.json` que tenham conteúdo.
+
+    Usado pelo TUI como comando "analyze bulk".
+    """
+
+    n = int(n)
+    if n <= 0:
+        return []
+
+    print("Inicializando analyzer...")
+    analyzer = CTAnalyzer()
+    print(f"Provider: {analyzer.llm.provider}, Model: {analyzer.llm.model}")
+
+    contents = load_ct_contents(contents_path)
+
+    seen_urls = set()
+    selected: list[dict] = []
+    for c in contents:
+        url = c.get("url")
+        if not url or url in seen_urls:
+            continue
+        if not c.get("content"):
+            continue
+        seen_urls.add(url)
+        selected.append(c)
+        if len(selected) >= n:
+            break
+
+    print(f"\nAnalisando {len(selected)} CTs (amostra n={n})...")
+
+    results: list[AnalysisResult] = []
+    for i, ct_content in enumerate(selected):
+        url = ct_content["url"]
+        content = ct_content.get("content", "")
+
+        print(f"\n[{i + 1}/{len(selected)}] URL: {url[:80]}...")
+        result = analyzer.analyze(url, content, titulo="")
+
+        print(f"  Classificação: {result.classificacao.value}")
+        print(f"  Score: {result.score_confianca:.0%}")
+        print(f"  Findings: {len(result.findings)}")
+
+        results.append(result)
+
+    return results
+
+
 def save_all_results(results: list[AnalysisResult]):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = Path(f"analyzer/output/analysis_{timestamp}")
