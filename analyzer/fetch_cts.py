@@ -63,7 +63,7 @@ def main():
     print(f"Buscando conteúdo de {len(urls)} CTs...")
     results = fetch_batch(urls)
 
-    output_path = Path("analyzer/output/ct_contents.json")
+    output_path = Path("output/ct_contents.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)

@@ -7,7 +7,7 @@ __pycache__/
 
 # Relatórios locais / outputs gerados
 ct_report.json
-ct_search_report.json
+output/reports/ct_search_report.json
 ct_search_report.md
 
 # Outputs do analyzer (dados finais e intermediários)

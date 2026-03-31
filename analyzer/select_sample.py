@@ -21,7 +21,7 @@ CT_CANDIDATES = [
 ]
 
 
-def load_ct_search_report(path: str = "ct_search_report.json") -> list[dict]:
+def load_ct_search_report(path: str = "../ct_search_report.json") -> list[dict]:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -44,7 +44,7 @@ def main():
         print(f"  - {ct['title'][:60]}...")
         print(f"    {ct['link']}")
 
-    output_path = Path("analyzer/output/sample_cts_10.json")
+    output_path = Path("output/sample_cts_10.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(cts, f, ensure_ascii=False, indent=2)

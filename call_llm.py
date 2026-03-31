@@ -208,15 +208,15 @@ class LLMWrapper:
 
         system = f"""Você é um assistente helpful com acesso a ferramentas.
 
-Quando precisar usar uma ferramenta, responda NO FORMATO JSON EXATO:
-{{"tool": "nome_da_funcao", "arguments": {{"param1": "valor1"}}}}
-
-Não use outro formato! Responda apenas com o JSON quando precisar de ferramenta.
-
-Ferramentas disponíveis:
-{chr(10).join(tool_descriptions)}
-
-Caso contrário, responda normalmente em texto."""
+                Quando precisar usar uma ferramenta, responda NO FORMATO JSON EXATO:
+                {{"tool": "nome_da_funcao", "arguments": {{"param1": "valor1"}}}}
+                
+                Não use outro formato! Responda apenas com o JSON quando precisar de ferramenta.
+                
+                Ferramentas disponíveis:
+                {chr(10).join(tool_descriptions)}
+                
+                Caso contrário, responda normalmente em texto."""
 
         return system
 

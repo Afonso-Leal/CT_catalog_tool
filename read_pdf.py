@@ -108,25 +108,7 @@ def call_tool_extract_pdf(pdf_path: str = PDF_PATH) -> dict:
         return {}
 
 
-def salvar_json_em_arquivo(variavel_json, caminho_arquivo: str) -> bool:
-    """Save JSON to file."""
-    try:
-        with open(caminho_arquivo, "w", encoding="utf-8") as arquivo:
-            if isinstance(variavel_json, str):
-                try:
-                    dados = json.loads(variavel_json)
-                    json.dump(dados, arquivo, indent=2, ensure_ascii=False)
-                except Exception:
-                    arquivo.write(variavel_json)
-            else:
-                json.dump(variavel_json, arquivo, indent=2, ensure_ascii=False)
 
-        print(f"✅ JSON salvo com sucesso em: {caminho_arquivo}")
-        return True
-
-    except Exception as e:
-        print(f"❌ Erro ao salvar JSON: {e}")
-        return False
 
 
 if __name__ == "__main__":

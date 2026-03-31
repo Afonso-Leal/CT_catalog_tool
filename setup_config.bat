@@ -14,14 +14,6 @@ echo.
 echo Detectando provedores...
 echo.
 
-REM Check Ollama
-curl -s http://localhost:11434/api/tags >nul 2>&1
-if %errorlevel% equ 0 echo [1] Ollama        - localhost:11434 (local)
-
-REM Check LM Studio
-curl -s http://localhost:1234/v1/models >nul 2>&1
-if %errorlevel% equ 0 echo [2] LM Studio      - localhost:1234/v1 (local)
-
 echo.
 echo Selecione o provedor:
 echo   1 - Ollama (local) - Gratis, no seu computador

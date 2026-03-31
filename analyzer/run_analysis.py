@@ -126,7 +126,7 @@ def run_analysis_bulk(n: int, contents_path: str = "analyzer/output/ct_contents.
 
 def save_all_results(results: list[AnalysisResult]):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = Path(f"analyzer/output/analysis_{timestamp}")
+    output_dir = Path(f"output/analysis_{timestamp}")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     all_results = []
