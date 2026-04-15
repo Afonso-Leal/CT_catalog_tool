@@ -63,11 +63,15 @@ if __name__ == "__main__":
     # test = page.xpath("//a[contains(@href, 'institutogratidao.org')]")[0].attrib["href"]
 
 
-    test_spider = BaseSpider()
+
     for site in [CT_CANDIDATES[0]]:
-        site_ = extract_domain(site)
-        test_spider.set_urls(f"https://{site_}/")
+
+        site = extract_domain(site)
+        test_spider = BaseSpider(
+            spider_name= f"{site.replace(".","")}_spider",
+            urls= f"https://{site}/",
+            log_file= f"../../output/logs/{site.replace(".","")}_logs.log",
+        )
         test_result = test_spider.start()
-        salvar_json_em_arquivo(test_result.items, caminho_arquivo=f"../../output/reports/{site_.replace(".","")}_page_report.json")
-    # print(test_result.items)
+        salvar_json_em_arquivo(test_result.items, caminho_arquivo=f"../../output/reports/{site.replace(".","")}_page_report.json")
 
