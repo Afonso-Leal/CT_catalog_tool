@@ -1,0 +1,14 @@
+config.yaml
+key.pem
+openrouter_t.py
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# Relatórios locais / outputs gerados
+ct_report.json
+ct_search_report.json
+ct_search_report.md
+
+# Outputs do analyzer (dados finais e intermediários)
+analyzer/output/
